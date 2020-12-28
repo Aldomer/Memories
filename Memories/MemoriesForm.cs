@@ -12,7 +12,12 @@ namespace Memories
 
         private void btnAutoOrganize_Click(object sender, EventArgs e)
         {
-            Organizer.Helper.Run();
+            bool organizedFiles = Organizer.Helper.Run();
+
+            if (organizedFiles)
+                MessageBox.Show("Complete");
+            else
+                MessageBox.Show("Failed");
         }
     }
 }
